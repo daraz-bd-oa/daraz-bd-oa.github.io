@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ramadan Countdown Timer</title>
+    <style>
+      body {
+        background-color: #f8f8f8;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .countdown-timer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        color: #333;
+        margin: 50px 0;
+      }
+      .countdown-timer span {
+        margin: 0 10px;
+      }
+      .countdown-timer .label {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ramadan Countdown Timer</h1>
+    <div class="countdown-timer">
+      <span id="sehri-hours"></span><span>:</span><span id="sehri-minutes"></span><span>:</span><span id="sehri-seconds"></span><span class="label">Sehri Time</span>
+    </div>
+    <div class="countdown-timer">
+      <span id="iftar-hours"></span><span>:</span><span id="iftar-minutes"></span><span>:</span><span id="iftar-seconds"></span><span class="label">Iftar Time</span>
+    </div>
+    <script>
+
+ 
+    var sehriCountDownDate = new Date("Mar 22, 2023 17:00:00").getTime();
+    var iftarCountDownDate = new Date("Mar 22, 2023 17:05:00").getTime();
+
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var sehriDistance = sehriCountDownDate - now;
+        var iftarDistance = iftarCountDownDate - now;
+
+        // Time calculations for hours, minutes and seconds
+        var sehriHours = Math.floor((sehriDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var sehriMinutes = Math.floor((sehriDistance % (1000 * 60 * 60)) / (1000 * 60));
+        var sehriSeconds = Math.floor((sehriDistance % (1000 * 60)) / 1000);
+
+        var iftarHours = Math.floor((iftarDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var iftarMinutes = Math.floor((iftarDistance % (1000 * 60 * 60)) / (1000 * 60));
+        var iftarSeconds = Math.floor((iftarDistance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("sehri-hours").innerHTML = sehriHours;
+        document.getElementById("sehri-minutes").innerHTML = sehriMinutes;
+        document.getElementById("sehri-seconds").innerHTML = sehriSeconds;
+
+        document.getElementById("iftar-hours").innerHTML = iftarHours;
+        document.getElementById("iftar-minutes").innerHTML = iftarMinutes;
+        document.getElementById("iftar-seconds").innerHTML = iftarSeconds;
+
+        // If the count down is finished, write some text
+        if (sehriDistance < 0) {
+          clearInterval(x);
+          document.getElementById("sehri-hours").innerHTML = "00";
+          document.getElementById("sehri-minutes").innerHTML = "00";
+          document.getElementById("sehri-seconds").innerHTML = "00";
+        }
+
+        if (iftarDistance < 0) {
+          clearInterval(x);
+          document.getElementById("iftar-hours").innerHTML = "00";
+          document.getElementById("iftar-minutes").innerHTML = "00";
+          document.getElementById("iftar-seconds").innerHTML = "00";
+        }
+      }, 1000);
+    </script>
+  </body>
+
+</html>
