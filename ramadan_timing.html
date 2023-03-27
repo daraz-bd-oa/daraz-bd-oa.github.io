@@ -4,11 +4,12 @@
     <title>Ramadan Countdown Timer</title>
     <style>
       body {
-        background-color: #c0827e;
+        /* background-color: #5d7e55; */
         font-family: Arial, sans-serif;
-        justify-content: center;
+        /* justify-content: center;
         align-items: center;
-        display: flex;
+        display: flex; */
+        background-image: url("bot countdown-06.png");
         margin: 0;
         padding: 0;
       }
@@ -21,16 +22,20 @@
       }
       h1 {
         text-align: center;
-        color: #333;
-        font-size: 50px;
-        margin-top: 20px;
+        /* color: #333; */
+        /* font-size: 50px; */
+        /* margin-top: 20px; */
+
+        font-size: 80px;
+        margin-top: 70px;
+        color: #ffffff;
       }
       .countdown-timer {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 30px;
-        color: #333;
+        color: #ffffff;
         margin: 20px 0;
       }
       .countdown-timer span {
@@ -39,32 +44,43 @@
       .countdown-timer .label {
         font-size: 16px;
         text-transform: uppercase;
+        margin-bottom:10px
       }
       @media (min-width: 600px) {
           h1 {
-              font-size: 50px;
+              font-size: 80px;
               margin-top: 70px;
+              color: #ffffff;
           }
           .countdown-timer {
               font-size: 70px;
               margin: 50px 0;
+              
           }
           .countdown-timer span {
               margin: 0 10px;
+
+              display: block !important;
           }
           .countdown-timer .label {
-              font-size: 30px;
+              font-size: 35px;
+              
           }
       }
     </style>
   </head>
   <body>
-    <h1>Ramadan Countdown Timer</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1>&nbsp;&nbsp;&nbsp;Ramadan Timer</h1>
+    <br><br>
     <div class="countdown-timer">
-      <span id="sehri-hours"></span><span>:</span><span id="sehri-minutes"></span><span>:</span><span id="sehri-seconds"></span><span class="label">Sehri Time</span>
+      <div><span class="label"> <strong>Sehri Time</strong> </span><br></div>
+      
+      <span id="sehri-hours"></span><span>h</span><span>:</span><span id="sehri-minutes"></span><span>m</span><span>:</span><span id="sehri-seconds"></span><span>s</span>
     </div>
     <div class="countdown-timer">
-      <span id="iftar-hours"></span><span>:</span><span id="iftar-minutes"></span><span>:</span><span id="iftar-seconds"></span><span class="label">Iftar Time</span>
+      <div><span class="label"><strong>Iftar Time</strong></span><br></div>
+      <span id="iftar-hours"></span><span>h</span><span>:</span><span id="iftar-minutes"></span><span>m</span><span>:</span><span id="iftar-seconds"></span><span>s</span>
     </div>
     <script>
 
