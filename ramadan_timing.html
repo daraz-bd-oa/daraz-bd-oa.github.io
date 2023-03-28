@@ -4,11 +4,7 @@
     <title>Ramadan Countdown Timer</title>
     <style>
       body {
-        /* background-color: #5d7e55; */
         font-family: Arial, sans-serif;
-        /* justify-content: center;
-        align-items: center;
-        display: flex; */
         background-image: url("bot countdown-06.png");
         margin: 0;
         padding: 0;
@@ -22,66 +18,80 @@
       }
       h1 {
         text-align: center;
-        /* color: #333; */
-        /* font-size: 50px; */
-        /* margin-top: 20px; */
-
-        font-size: 80px;
-        margin-top: 70px;
+        font-size: 100px;
+        margin-top: 370px;
         color: #ffffff;
+        font: optional;
+        font-family: 'Buka Puasa Bersama';
       }
       .countdown-timer {
-        display: flex;
+        display: block;
         justify-content: center;
+        /* flex-wrap: wrap; */
         align-items: center;
-        font-size: 30px;
+        text-align: center;
+        font-size: 70px;
         color: #ffffff;
         margin: 20px 0;
+
       }
       .countdown-timer span {
-        margin: 0 5px;
+        margin: 0 10px;
+        
       }
       .countdown-timer .label {
-        font-size: 16px;
+        font-size: 35px;
         text-transform: uppercase;
         margin-bottom:10px
-      }
-      @media (min-width: 600px) {
-          h1 {
-              font-size: 80px;
-              margin-top: 70px;
-              color: #ffffff;
-          }
-          .countdown-timer {
-              font-size: 70px;
-              margin: 50px 0;
-              
-          }
-          .countdown-timer span {
-              margin: 0 10px;
+      } 
 
-              display: block !important;
-          }
-          .countdown-timer .label {
-              font-size: 35px;
-              
-          }
+      .countdown-timer .label_date {
+        font-size: 35px;
+        text-transform: uppercase;
       }
+
+
+      @font-face {
+        font-family: 'Buka Puasa Bersama';
+        src: url('buka_puasa_bersama.otf') format('opentype');
+      }
+
     </style>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+
   </head>
   <body>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <h1>&nbsp;&nbsp;&nbsp;Ramadan Timer</h1>
+    
+    <h1>&nbsp;&nbsp;Ramadan Timer</h1>
+    
     <br><br>
+
+
     <div class="countdown-timer">
-      <div><span class="label"> <strong>Sehri Time</strong> </span><br></div>
-      
+      <!-- <div><span class="label"> <strong>Sehri Time</strong> </span><br></div> -->
+      <span class="label">Sehri Time</span><br>
       <span id="sehri-hours"></span><span>h</span><span>:</span><span id="sehri-minutes"></span><span>m</span><span>:</span><span id="sehri-seconds"></span><span>s</span>
     </div>
     <div class="countdown-timer">
-      <div><span class="label"><strong>Iftar Time</strong></span><br></div>
+      <span class="label">Iftar Time</span><br>
       <span id="iftar-hours"></span><span>h</span><span>:</span><span id="iftar-minutes"></span><span>m</span><span>:</span><span id="iftar-seconds"></span><span>s</span>
     </div>
+
+    <!-- <div class="countdown-timer">
+      <span class="label_date">Date</span>
+    </div> -->
+    
+
+    
+    <!-- <div class="countdown-date">
+      <span class="label">Date</span><br>
+      <span id="ramadan-day">25</span><span>/</span><span id="ramadan-month">03</span><span>/</span><span id="ramadan-year">2023</span>
+    </div> -->
+
+    <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
+    
     <script>
 
       
@@ -94,6 +104,18 @@
         let i = 0;
 
           var x = setInterval(function() {
+
+          // var 
+          // var today = new Date();
+
+          // var date = today.getDate();
+          // var month = today.getMonth() + 1;
+          // var year = today.getFullYear();
+
+          // document.getElementById("ramadan-day").innerHTML = date;
+          // document.getElementById("ramadan-month").innerHTML = month;
+          // document.getElementById("ramadan-year").innerHTML = year;
+
 
           var now = new Date().getTime();
 
