@@ -89,17 +89,17 @@
       <span id="iftar-hours"></span><span>h</span><span>:</span><span id="iftar-minutes"></span><span>m</span><span>:</span><span id="iftar-seconds"></span><span>s</span>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="countdown-timer">
-      <span style="font-size: 45px; border: none;" class="label">Khulna</span><br>
+      <span style="font-size: 35px; border: none;" class="label">Khulna</span><br>
     </div>
     
     <script>
 
       
 
-        let seheri_dates = ["Mar 28, 2023 04:35:00", "Mar 29, 2023 04:32:00", "Mar 30, 2023 04:31:00", "Mar 31, 2023 04:30:00", "Apr 01, 2023 04:30:00"];
-        let iftari_dates = ["Mar 28, 2023 18:16:00", "Mar 29, 2023 18:16:00", "Mar 30, 2023 18:17:00", "Mar 31, 2023 18:17:00", "Apr 01, 2023 04:30:00"];
+        let seheri_dates = ["Mar 28, 2023 04:35:00", "Mar 29, 2023 04:33:00", "Mar 30, 2023 04:31:00", "Mar 31, 2023 04:30:00", "Apr 01, 2023 04:29:00"];
+        let iftari_dates = ["Mar 28, 2023 18:16:00", "Mar 29, 2023 18:17:00", "Mar 30, 2023 18:17:00", "Mar 31, 2023 18:18:00", "Apr 01, 2023 04:18:00"];
 
         
   
@@ -108,12 +108,12 @@
           var x = setInterval(function() {
 
 
-          var now = new Date().getTime();
+          var now = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Dhaka"})).getTime();
 
 
 
-          var sehriCountDownDate = new Date(seheri_dates[i]).getTime();
-          var iftarCountDownDate = new Date(iftari_dates[i]).getTime();
+          var sehriCountDownDate = new Date(seheri_dates[i]).getTime() + (4* 60 *1000);
+          var iftarCountDownDate = new Date(iftari_dates[i]).getTime() + (3* 60 *1000);
 
           // Find the distance between now and the count down date
           var sehriDistance = sehriCountDownDate - now;
