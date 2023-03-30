@@ -6,20 +6,21 @@
       body {
         font-family: 'Public Sans Light';
         background-image: url("bot countdown-03.png");
-        margin: 0;
-        padding: 0;
+        /* margin: 20px 20px 20px 20px;
+        padding: 50px 50px 50px 50px; */
       }
-      .container {
-        display: flex;
+      /* .container {
+        display: block;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-      }
+        height: 5vh;
+        
+      } */
       h1 {
         text-align: center;
-        font-size: 100px;
-        margin-top: 400px;
+        /* font-size: 100px; */
+        /* margin-top: 400px; */
         color: #ffffff;
         font: optional;
         font-family: 'Khodijah Free';
@@ -31,11 +32,13 @@
         display: block;
         justify-content: center;
         /* flex-wrap: wrap; */
-        align-items: center;
+        /* width: 100%; */
+        /* align-items: center; */
         text-align: center;
-        font-size: 70px;
+        /* font-size: 70px; */
         color: #ffffff;
-        margin: 20px 0;
+        /* flex: 1; */
+        /* margin: 20px 20px; */
 
       }
       .countdown-timer span {
@@ -43,18 +46,14 @@
         
       }
       .countdown-timer .label {
-        font-size: 35px;
+        /* font-size: 35px; */
         text-transform: uppercase;
-        margin-bottom:5px;
+        /* margin-bottom:5px; */
 
-        border: 1px solid rgb(255, 255, 255);
-        padding: 5px;
-      } 
+        border: 2px solid rgb(255, 255, 255);
+        padding: 10px;
+      }
 
-      /* .countdown-timer .label_date {
-        font-size: 40px;
-        text-transform: uppercase;
-      } */
 
       @font-face {
         font-family: 'Khodijah Free';
@@ -67,42 +66,43 @@
       }
 
     </style>
-    
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name"> -->
 
   </head>
   <body>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     
-    <h1>&nbsp;&nbsp;Ramadan Timer</h1>
+    <h1 style="font-size: 80px;">&nbsp;&nbsp;Ramadan Timer</h1>
     
-    <br><br>
+    <br><br><br><br>
 
 
     <div class="countdown-timer">
-      <span class="label">Sehri Time</span><br>
-      <span id="sehri-hours"></span><span>h</span><span>:</span><span id="sehri-minutes"></span><span>m</span><span>:</span><span id="sehri-seconds"></span><span>s</span>
+      <span style="font-size: 35px;" class="label">Sehri Time</span> <span style="font-size: 35px;">:</span> <span id="seheri-time-only" style="font-size: 45px; border: none;" class="label"><span>AM</span></span>
+      <br><br><br>
+      <span style="font-size: 55px;" id="sehri-hours"></span><span style="font-size: 40px;">h</span><span style="font-size: 40px;">:</span><span style="font-size: 55px;" id="sehri-minutes"></span><span style="font-size: 40px;">m</span><span style="font-size: 40px;">:</span><span style="font-size: 55px;" id="sehri-seconds"></span><span style="font-size: 40px;">s</span>
     </div>
 
-
+    <br><br><br>
     <div class="countdown-timer">
-      <span class="label">Iftar Time</span><br>
-      <span id="iftar-hours"></span><span>h</span><span>:</span><span id="iftar-minutes"></span><span>m</span><span>:</span><span id="iftar-seconds"></span><span>s</span>
+      <span style="font-size: 35px;" class="label">Iftar Time</span> <span style="font-size: 35px;">:</span> <span id="iftar-time-only" style="font-size: 45px; border: none;" class="label">&nbsp;PM</span><br><br><br>
+      <span style="font-size: 55px;" id="iftar-hours"></span><span style="font-size: 40px;" >h</span><span style="font-size: 40px;">:</span><span style="font-size: 55px;" id="iftar-minutes"></span><span style="font-size: 40px;">m</span><span style="font-size: 40px;">:</span><span style="font-size: 55px;" id="iftar-seconds"></span><span style="font-size: 40px;">s</span>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     <div class="countdown-timer">
-      <span style="font-size: 35px; border: none;" class="label">Khulna</span><br>
+      <span style="font-size: 30px; border: none; display: flex; justify-content: center;" class="label">Khulna</span>
+      <span id = "date-only" style="font-size: 40px; border:none; display: flex; justify-content: center;" class="label"></span>
     </div>
     
     <script>
 
+
+        let seheri_dates = ["Mar 30, 2023 04:31:00", "Mar 31, 2023 04:30:00", "Apr 01, 2023 04:29:00", "Apr 02, 2023 04:28:00", "Apr 03, 2023 04:27:00"];
+        let iftari_dates = ["Mar 30, 2023 18:17:00", "Mar 31, 2023 18:18:00", "Apr 01, 2023 06:18:00", "Apr 02, 2023 06:19:00", "Apr 03, 2023 06:19:00"];
+
       
-
-        let seheri_dates = ["Mar 28, 2023 04:35:00", "Mar 29, 2023 04:33:00", "Mar 30, 2023 04:31:00", "Mar 31, 2023 04:30:00", "Apr 01, 2023 04:29:00"];
-        let iftari_dates = ["Mar 28, 2023 18:16:00", "Mar 29, 2023 18:17:00", "Mar 30, 2023 18:17:00", "Mar 31, 2023 18:18:00", "Apr 01, 2023 04:18:00"];
-
-        
-  
         let i = 0;
 
           var x = setInterval(function() {
@@ -110,10 +110,38 @@
 
           var now = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Dhaka"})).getTime();
 
+          // This wil update the dates
 
+          dateOnly = seheri_dates[i].slice(0, 11);
+
+          document.getElementById("date-only").innerHTML = dateOnly;
+          
 
           var sehriCountDownDate = new Date(seheri_dates[i]).getTime() + (4* 60 *1000);
           var iftarCountDownDate = new Date(iftari_dates[i]).getTime() + (3* 60 *1000);
+
+          //This will give the seheri and iftar times
+
+          const seherTimeOnly = seheri_dates[i].slice(13,18);
+          const iftarTimeOnly = iftari_dates[i].slice(13,18);
+
+          // console.log(iftarTimeOnly.split(":"));
+
+          const [seheri_Hours, seheri_Minutes] = seherTimeOnly.split(":");
+          const [iftar_Hours, iftar_Minutes] = iftarTimeOnly.split(":");
+          
+
+
+          console.log(iftar_Minutes);
+          
+          const formattedSeheriTime = `${((parseInt(seheri_Hours) + 11) % 12) + 1}:${parseInt(seheri_Minutes) + 4} ${parseInt(seheri_Hours) >= 12 ? "PM" : "AM"}`;
+          const formattedIftarTime = `${((parseInt(iftar_Hours) + 11) % 12) + 1}:${parseInt(iftar_Minutes) + 3} ${parseInt(iftar_Hours) >= 12 ? "PM" : "AM"}`;
+
+          
+
+          document.getElementById("seheri-time-only").innerHTML = formattedSeheriTime;
+          document.getElementById("iftar-time-only").innerHTML = formattedIftarTime;
+
 
           // Find the distance between now and the count down date
           var sehriDistance = sehriCountDownDate - now;
@@ -151,7 +179,7 @@
 
             i++;
 
-            console.log(`Index ${i}`);
+            // console.log(`Index ${i}`);
 
             // clearInterval(x);
 
